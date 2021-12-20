@@ -9,6 +9,7 @@ namespace PresentationApplication.Interfaces
     public interface IPresentationDbContext
     {
         DbSet<Presentation> Presentaions { get; set; }
+       
       
         Task<int> SaveChangesAsync(CancellationToken cancellationToken);
     }

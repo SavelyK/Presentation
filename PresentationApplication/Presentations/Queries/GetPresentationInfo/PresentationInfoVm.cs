@@ -11,11 +11,12 @@ namespace PresentationApplication.Presentations.Queries.GetPresentationInfo
 {
     public class PresentationInfoVm : IMapWith<Presentation>
     {
-        //public Guid EventCreatorId { get; set; }
+        
         public Guid EventId { get; set; }
         public string EventName { get; set; }
         public DateTime DateAndTime { get; set; } 
         public string EventDescription { get; set; }
+        public string Status { get; set; }
 
         public void Mapping(Profile profile)
         {
@@ -27,7 +28,9 @@ namespace PresentationApplication.Presentations.Queries.GetPresentationInfo
                   .ForMember(presentationVm => presentationVm.EventDescription,
                 opt => opt.MapFrom(presentation => presentation.EventDescription))
                     .ForMember(presentationVm => presentationVm.EventId,
-                opt => opt.MapFrom(presentation => presentation.EventId));
+                opt => opt.MapFrom(presentation => presentation.EventId))
+                     .ForMember(presentationVm => presentationVm.Status,
+                opt => opt.MapFrom(presentation => presentation.Status));
 
         }
     }

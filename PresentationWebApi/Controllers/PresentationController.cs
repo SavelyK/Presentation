@@ -20,7 +20,7 @@ namespace PresentationWebApi.Controllers
         public async Task<ActionResult<Guid>> CreatePresentation([FromBody] CreatePresentationDto createPresentationDto)
         {
             var command = _mapper.Map<CreatePresentationCommand>(createPresentationDto);
-            command.EventCreatorId = UserId;
+            command.EventCreatorId = UserId;       
             var presentationId = await Mediator.Send(command);
             return Ok(presentationId);
         }

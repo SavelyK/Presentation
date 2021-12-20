@@ -4,6 +4,7 @@ using System.Threading;
 using PresentationApplication.Interfaces;
 using System.Threading.Tasks;
 using MediatR;
+using System.Collections.Generic;
 
 namespace PresentationApplication.Presentations.Commands.CreatePresentation
 {
@@ -22,8 +23,14 @@ namespace PresentationApplication.Presentations.Commands.CreatePresentation
                 EventId = Guid.NewGuid(),
                 EventName = request.EventName,
                 DateAndTime = request.DateAndTime,
-                EventDescription = request.EventDescription
-            };
+                EventDescription = request.EventDescription,
+                Status = "Open",
+                Visitors = new List<Visitor>(),
+             };
+            Visitor visitor = new Visitor();
+            presentation.Visitors.Add(visitor);
+           
+
             await _dbContext.Presentaions.AddAsync(presentation, cancellationToken);
             await _dbContext.SaveChangesAsync(cancellationToken);
             return presentation.EventId;

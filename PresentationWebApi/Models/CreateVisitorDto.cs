@@ -6,9 +6,9 @@ using System;
 
 namespace PresentationWebApi.Models
 {
-    public class AddVisitorDto : IMapWith<AddVisitorCommand>
+    public class CreateVisitorDto : IMapWith<CreateVisitorCommand>
     {
-        public Guid VisitorId { get; set; }
+      
         public string Name { get; set; }
         public string Surname { get; set; }
         public string Patronymic { get; set; }
@@ -16,12 +16,12 @@ namespace PresentationWebApi.Models
         public string Gender { get; set; }
         public string PhoneNumber { get; set; }
         public string Email { get; set; }
-        
+        public Guid EventId { get; set; }
+      
         public void Mapping(Profile profile)
         {
-            profile.CreateMap<AddVisitorDto, AddVisitorCommand>()
-                .ForMember(visitorCommand => visitorCommand.VisitorId,
-                opt => opt.MapFrom(visitorDto => visitorDto.VisitorId))
+            profile.CreateMap<CreateVisitorDto, CreateVisitorCommand>()
+                
                 .ForMember(visitorCommand => visitorCommand.Name,
                 opt => opt.MapFrom(visitorDto => visitorDto.Name))
                 .ForMember(visitorCommand => visitorCommand.Surname,
@@ -35,7 +35,9 @@ namespace PresentationWebApi.Models
                 .ForMember(visitorCommand => visitorCommand.PhoneNumber,
                 opt => opt.MapFrom(visitorDto => visitorDto.PhoneNumber))
                 .ForMember(visitorCommand => visitorCommand.Email,
-                opt => opt.MapFrom(visitorDto => visitorDto.Email));
-        }
+                opt => opt.MapFrom(visitorDto => visitorDto.Email))
+                .ForMember(visitorCommand => visitorCommand.EventId,
+                opt => opt.MapFrom(visitorDto => visitorDto.EventId));
+    }
     }
 }

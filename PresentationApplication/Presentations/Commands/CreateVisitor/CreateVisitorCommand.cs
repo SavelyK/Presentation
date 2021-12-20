@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace PresentationApplication.Presentations.Commands.CreateVisitor
 {
-    public class AddVisitorCommand : IRequest
+    public class CreateVisitorCommand : IRequest<Guid>
     {
 
         public Guid VisitorId { get; set; }
@@ -19,6 +19,7 @@ namespace PresentationApplication.Presentations.Commands.CreateVisitor
         public string Gender { get; set; }
         public string PhoneNumber { get; set; }
         public string Email { get; set; }
-
+        public Guid EventId { get; set; }
+        public List<Visitor> Visitors { get; set; }
     }
 }
