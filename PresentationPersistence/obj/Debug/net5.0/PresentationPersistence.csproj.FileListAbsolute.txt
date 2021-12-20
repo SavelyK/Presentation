@@ -1,0 +1,17 @@
+C:\PresentationService\PresentationPersistence\bin\Debug\net5.0\PresentationPersistence.deps.json
+C:\PresentationService\PresentationPersistence\bin\Debug\net5.0\PresentationPersistence.dll
+C:\PresentationService\PresentationPersistence\bin\Debug\net5.0\ref\PresentationPersistence.dll
+C:\PresentationService\PresentationPersistence\bin\Debug\net5.0\PresentationPersistence.pdb
+C:\PresentationService\PresentationPersistence\bin\Debug\net5.0\PresentationApplication.dll
+C:\PresentationService\PresentationPersistence\bin\Debug\net5.0\PresentationDomain.dll
+C:\PresentationService\PresentationPersistence\bin\Debug\net5.0\PresentationApplication.pdb
+C:\PresentationService\PresentationPersistence\bin\Debug\net5.0\PresentationDomain.pdb
+C:\PresentationService\PresentationPersistence\obj\Debug\net5.0\PresentationPersistence.csproj.AssemblyReference.cache
+C:\PresentationService\PresentationPersistence\obj\Debug\net5.0\PresentationPersistence.GeneratedMSBuildEditorConfig.editorconfig
+C:\PresentationService\PresentationPersistence\obj\Debug\net5.0\PresentationPersistence.AssemblyInfoInputs.cache
+C:\PresentationService\PresentationPersistence\obj\Debug\net5.0\PresentationPersistence.AssemblyInfo.cs
+C:\PresentationService\PresentationPersistence\obj\Debug\net5.0\PresentationPersistence.csproj.CoreCompileInputs.cache
+C:\PresentationService\PresentationPersistence\obj\Debug\net5.0\PresentationPersistence.csproj.CopyComplete
+C:\PresentationService\PresentationPersistence\obj\Debug\net5.0\PresentationPersistence.dll
+C:\PresentationService\PresentationPersistence\obj\Debug\net5.0\ref\PresentationPersistence.dll
+C:\PresentationService\PresentationPersistence\obj\Debug\net5.0\PresentationPersistence.pdb

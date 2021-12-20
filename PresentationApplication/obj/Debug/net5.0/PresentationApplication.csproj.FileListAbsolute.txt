@@ -1,0 +1,15 @@
+C:\PresentationService\PresentationApplication\bin\Debug\net5.0\PresentationApplication.deps.json
+C:\PresentationService\PresentationApplication\bin\Debug\net5.0\PresentationApplication.dll
+C:\PresentationService\PresentationApplication\bin\Debug\net5.0\ref\PresentationApplication.dll
+C:\PresentationService\PresentationApplication\bin\Debug\net5.0\PresentationApplication.pdb
+C:\PresentationService\PresentationApplication\bin\Debug\net5.0\PresentationDomain.dll
+C:\PresentationService\PresentationApplication\bin\Debug\net5.0\PresentationDomain.pdb
+C:\PresentationService\PresentationApplication\obj\Debug\net5.0\PresentationApplication.csproj.AssemblyReference.cache
+C:\PresentationService\PresentationApplication\obj\Debug\net5.0\PresentationApplication.GeneratedMSBuildEditorConfig.editorconfig
+C:\PresentationService\PresentationApplication\obj\Debug\net5.0\PresentationApplication.AssemblyInfoInputs.cache
+C:\PresentationService\PresentationApplication\obj\Debug\net5.0\PresentationApplication.AssemblyInfo.cs
+C:\PresentationService\PresentationApplication\obj\Debug\net5.0\PresentationApplication.csproj.CoreCompileInputs.cache
+C:\PresentationService\PresentationApplication\obj\Debug\net5.0\PresentationApplication.csproj.CopyComplete
+C:\PresentationService\PresentationApplication\obj\Debug\net5.0\PresentationApplication.dll
+C:\PresentationService\PresentationApplication\obj\Debug\net5.0\ref\PresentationApplication.dll
+C:\PresentationService\PresentationApplication\obj\Debug\net5.0\PresentationApplication.pdb
