@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace PresentationDomain
 {
@@ -10,6 +11,7 @@ namespace PresentationDomain
         public DateTime DateAndTime { get; set; }
         public string EventDescription { get; set; }
         public string Status { get; set; }
+        public List<Visitor> Visitors { get; set; }
    
     }
 }
