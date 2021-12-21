@@ -20,6 +20,6 @@ namespace PresentationApplication.Presentations.Commands.CreateVisitor
         public string PhoneNumber { get; set; }
         public string Email { get; set; }
         public Guid EventId { get; set; }
-        public List<Visitor> Visitors { get; set; }
+        
     }
 }

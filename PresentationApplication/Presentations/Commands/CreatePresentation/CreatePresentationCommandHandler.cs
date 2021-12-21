@@ -25,10 +25,10 @@ namespace PresentationApplication.Presentations.Commands.CreatePresentation
                 DateAndTime = request.DateAndTime,
                 EventDescription = request.EventDescription,
                 Status = "Open",
-                Visitors = new List<Visitor>(),
+                CountVisiters = 0               
              };
-            Visitor visitor = new Visitor();
-            presentation.Visitors.Add(visitor);
+           
+          
            
 
             await _dbContext.Presentaions.AddAsync(presentation, cancellationToken);

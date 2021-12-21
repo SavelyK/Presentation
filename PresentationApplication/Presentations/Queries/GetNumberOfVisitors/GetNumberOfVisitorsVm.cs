@@ -15,8 +15,10 @@ namespace PresentationApplication.Presentations.Queries.GetNumberOfVisitors
         {
             profile.CreateMap<Presentation, GetNumberOfVisitorsVm>()
 
-              .ForMember(presentationVm => presentationVm.Count,
-                opt => opt.MapFrom(presentation => presentation.Visitors.Count));
+              .ForMember(presentationVm => presentationVm.EventId,
+                opt => opt.MapFrom(presentation => presentation.EventId))
+            .ForMember(presentationVm => presentationVm.Count,
+                opt => opt.MapFrom(presentation => presentation.CountVisiters));
 
 
 

@@ -13,6 +13,6 @@ namespace PresentationApplication.Presentations.Commands.CreatePresentation
         public DateTime DateAndTime { get; set; }
         public string EventDescription { get; set; }
         public string Status { get; set; }
-        public List<Visitor> Visitors { get; set; } 
+       
     }
 }

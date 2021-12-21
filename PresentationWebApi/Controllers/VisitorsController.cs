@@ -1,12 +1,11 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using PresentationApplication.Presentations.Commands.CreateVisitor;
+using PresentationApplication.Presentations.Commands.DeleteVisiterCommand;
+using PresentationApplication.Presentations.Commands.UpdateVisiter;
 using PresentationApplication.Presentations.Queries.GetNumberOfVisitors;
 using PresentationWebApi.Models;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace PresentationWebApi.Controllers
@@ -33,7 +32,7 @@ namespace PresentationWebApi.Controllers
         {
             var query = new GetNumberOfVisitorsQuery
             {
-                
+                EventCreatorId = UserId,
                 EventId = id
             };
             var vm = await Mediator.Send(query);
@@ -43,8 +42,30 @@ namespace PresentationWebApi.Controllers
             }
             else
             {
-                return Ok(vm);
+                return Ok(vm.Count);
             }
+        }
+
+        [HttpPut]
+        public async Task<ActionResult> VisitorUpdate([FromBody] UpdateVisitorDto updateVisitorDto)
+        {
+            var command = _mapper.Map<UpdateVisitorCommand>(updateVisitorDto);
+
+            await Mediator.Send(command);
+            return NoContent();
+        }
+
+        [HttpDelete("{idVisiter} , {idEvent}")]
+        public async Task<IActionResult> DeleteVisiter (Guid idVisiter, Guid idEvent)
+        {
+            var command = new DeleteVisiterCommand
+            {
+                VisitorId = idVisiter,
+                EventId = idEvent,
+
+            };
+            await Mediator.Send(command);
+            return NoContent();
         }
     }
 }

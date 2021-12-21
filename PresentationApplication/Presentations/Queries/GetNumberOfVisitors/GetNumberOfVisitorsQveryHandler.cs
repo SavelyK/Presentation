@@ -27,7 +27,7 @@ namespace PresentationApplication.Presentations.Queries.GetNumberOfVisitors
                 throw new NotFoundException(nameof(Presentations), request.EventId);
             }
             
-            return _mapper.Map<GetNumberOfVisitorsVm>(entity.Visitors.Count);
+            return _mapper.Map<GetNumberOfVisitorsVm>(entity);
         }
     }
 }

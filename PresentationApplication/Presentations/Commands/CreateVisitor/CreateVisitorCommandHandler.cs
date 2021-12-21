@@ -28,15 +28,20 @@ namespace PresentationApplication.Presentations.Commands.CreateVisitor
                 Gender = request.Gender,
                 Patronymic = request.Patronymic,
                 PhoneNumber = request.PhoneNumber,
-                Surname = request.Surname    
-            };
+                Surname = request.Surname,
+                EventId = request.EventId
+             };
+
             var entity = await _dbContext.Presentaions.FirstOrDefaultAsync(precentation =>
            precentation.EventId == request.EventId, cancellationToken);
             if (entity == null)
             {
                 throw new NotFoundException(nameof(Presentations), request.EventId);
             }
-            entity.Visitors?.Add(visitor);
+            entity.CountVisiters++;
+             
+            
+            await _dbContext.Visitors.AddAsync(visitor, cancellationToken);
             await _dbContext.SaveChangesAsync(cancellationToken);
             return visitor.VisitorId;
         }

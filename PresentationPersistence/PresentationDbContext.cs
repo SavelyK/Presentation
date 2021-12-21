@@ -9,7 +9,7 @@ namespace PresentationPersistence
     public class PresentationDbContext : DbContext, IPresentationDbContext
     {
         public DbSet<Presentation> Presentaions { get; set; }
-        
+        public DbSet<Visitor> Visitors { get; set; }
         public PresentationDbContext(DbContextOptions<PresentationDbContext> options)
             : base(options) { }
         protected override void OnModelCreating(ModelBuilder builder)

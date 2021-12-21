@@ -17,7 +17,8 @@ namespace PresentationWebApi.Models
         public string PhoneNumber { get; set; }
         public string Email { get; set; }
         public Guid EventId { get; set; }
-      
+        
+
         public void Mapping(Profile profile)
         {
             profile.CreateMap<CreateVisitorDto, CreateVisitorCommand>()
@@ -35,9 +36,7 @@ namespace PresentationWebApi.Models
                 .ForMember(visitorCommand => visitorCommand.PhoneNumber,
                 opt => opt.MapFrom(visitorDto => visitorDto.PhoneNumber))
                 .ForMember(visitorCommand => visitorCommand.Email,
-                opt => opt.MapFrom(visitorDto => visitorDto.Email))
-                .ForMember(visitorCommand => visitorCommand.EventId,
-                opt => opt.MapFrom(visitorDto => visitorDto.EventId));
+                opt => opt.MapFrom(visitorDto => visitorDto.Email));
     }
     }
 }

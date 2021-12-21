@@ -11,5 +11,5 @@ namespace PresentationPersistence.EntityTypeConfiguration
             builder.HasKey(presentation => presentation.EventId);
         }
     }
-    
+   
 }

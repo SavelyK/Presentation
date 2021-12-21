@@ -9,7 +9,7 @@ namespace PresentationApplication.Presentations.Commands.DeleteCommand
     {
         public Guid EventCreatorId { get; set; }
         public Guid EventId { get; set; }
-        public List<Visitor> Visitors { get; set; }
+  
 
     }
 }

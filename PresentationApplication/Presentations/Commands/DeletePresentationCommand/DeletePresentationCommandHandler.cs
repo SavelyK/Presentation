@@ -12,19 +12,24 @@ namespace PresentationApplication.Presentations.Commands.DeleteCommand
         : IRequestHandler<DeletePresentationCommand>
     {
         private readonly IPresentationDbContext _dbContext;
+        public DeletePresentationCommandHandler(IPresentationDbContext dbContext) =>
+            _dbContext = dbContext;
         public async Task<Unit> Handle(DeletePresentationCommand request, 
             CancellationToken cansellationToken)
         {
             var entity = await _dbContext.Presentaions
                 .FindAsync(new object[] { request.EventId }, cansellationToken);
-            if(entity == null || entity.EventCreatorId != request.EventCreatorId)
+            if(entity == null )
             {
                 throw new NotFoundException(nameof(Presentations), request.EventId);
             }
-    
-            _dbContext.Presentaions.Remove(entity);
-            await _dbContext.SaveChangesAsync(cansellationToken);
-            return Unit.Value;
+            else if (entity.CountVisiters == 0)
+            {
+                _dbContext.Presentaions.Remove(entity);
+                await _dbContext.SaveChangesAsync(cansellationToken);
+            }
+            
+                return Unit.Value;
         }
         
     }

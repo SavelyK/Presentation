@@ -5,6 +5,9 @@ using PresentationWebApi.Models;
 using AutoMapper;
 using PresentationApplication.Presentations.Commands.CreatePresentation;
 using PresentationApplication.Presentations.Queries.GetPresentationInfo;
+using PresentationApplication.Presentations.Commands.UpdatePresentation;
+using PresentationApplication.Presentations.Commands.DeleteCommand;
+using PresentationApplication.Presentations.Commands.ClosingPresentation;
 
 namespace PresentationWebApi.Controllers
 {
@@ -43,7 +46,36 @@ namespace PresentationWebApi.Controllers
                 return Ok(vm);
             }
         }
+        [HttpPut]
+        public async Task<ActionResult> PresentationUpdate([FromBody] UpdatePresentationDto updatePresentationDto)
+        {
+            var command = _mapper.Map<UpdatePresentationCommand>(updatePresentationDto);
+            
+            await Mediator.Send(command);
+            return NoContent();
+        }
 
+
+        [HttpPut]
+        public async Task<ActionResult> ClosingPresentation([FromBody] ClosingPresentationDto closingPresentationDto)
+        {
+            var command = _mapper.Map<ClosingPresentationCommand>(closingPresentationDto);
+
+            await Mediator.Send(command);
+            return NoContent();
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeletePresentation(Guid id)
+        {
+            var command = new DeletePresentationCommand
+            {
+                EventId = id,
+              
+            };
+            await Mediator.Send(command);
+            return NoContent();
+        }
 
     }
 }

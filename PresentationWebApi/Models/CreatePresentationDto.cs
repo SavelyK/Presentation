@@ -10,7 +10,7 @@ namespace PresentationWebApi.Models
         public string EventName { get; set; }
         public DateTime DateAndTime { get; set; }
         public string EventDescription { get; set; }
-        
+  
         public void Mapping(Profile profile)
         {
             profile.CreateMap<CreatePresentationDto, CreatePresentationCommand>()
@@ -20,7 +20,6 @@ namespace PresentationWebApi.Models
                 opt => opt.MapFrom(presentationDto => presentationDto.DateAndTime))
                 .ForMember(presentationCommand => presentationCommand.EventDescription,
                 opt => opt.MapFrom(presentationDto => presentationDto.EventDescription));
-                
         }
     }
 }
